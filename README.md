@@ -1,15 +1,12 @@
 # gulp-sonar2
-
 Sonar for gulp, removed dependency on gulp-util
 
 ## Install
-
 ```
 npm install --save-dev gulp-sonar2
 ```
 
 ## Usage Example
-
 ```js
 gulp.task('sonar', function () {
     var options = {
@@ -50,6 +47,5 @@ gulp.task('sonar', function () {
 ```
 
 ## Credit
-
-Inspired by [grunt-sonar-runner](https://github.com/skhatri/grunt-sonar-runner) by [Suresh Khatri](https://github.com/skhatri).
+Inspired by [grunt-sonar-runner](https://github.com/skhatri/grunt-sonar-runner) by [Suresh Khatri](https://github.com/skhatri).  
 Forked from [gulp-sonar](https://github.com/carsdotcom/gulp-sonar) by [carsdotcom](https://github.com/carsdotcom)
