@@ -15,7 +15,7 @@ module.exports = function (options) {
         write,
         flush;
 
-    SONAR_VERSION = "2.8";
+    SONAR_VERSION = "3.1";
     SONAR_SCANNER_HOME = path.join(__dirname, format('/sonar-scanner-%s', SONAR_VERSION));
     SONAR_SCANNER_PROPERTIES = path.join(__dirname, format('/sonar-scanner-%s', SONAR_VERSION), 'conf', 'sonar-scanner.properties');
     SONAR_SCANNER_JAR = format('/lib/sonar-scanner-cli-%s.jar', SONAR_VERSION);
@@ -59,21 +59,21 @@ module.exports = function (options) {
 
         fs.writeFile(path.join(SONAR_SCANNER_HOME, '/conf/sonar-scanner.properties'), props.join(os.EOL), function (err) {
             if (err) {
-                throw new PluginError('gulp-sonar', format('Error writing properties file: %d.', err));
+                throw new PluginError('gulp-sonar2', format('Error writing properties file: %d.', err));
             } else {
                 process = exec(SONAR_SCANNER_COMMAND, options_exec, function () {});
                 process.stdout.on('data', function (c) {
-                    gutil.log(c);
+                    gutil.info(c);
                 });
                 process.stderr.on('data', function (c) {
-                    gutil.log(c);
+                    gutil.info(c);
                 });
                 process.on('exit', function (code) {
                     if (code !== 0) {
-                        gutil.log(format('Return code: %d.', code));
-                        throw new PluginError('gulp-sonar', format('Return code: %d.', code));
+                        gutil.info('Return code: %d.', code);
+                        throw new PluginError('gulp-sonar2', format('Return code: %d.', code));
                     }
-                    gutil.log(format('Return code: %d.', code));
+                    gutil.info('Return code: %d.', code);
                     cb();
                 });
             }
