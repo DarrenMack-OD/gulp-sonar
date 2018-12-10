@@ -1,7 +1,7 @@
 {
   "name": "gulp-sonar2",
   "description": "Sonar runner for gulp.",
-  "version": "3.1.1",
+  "version": "3.1.2",
   "homepage": "https://github.com/DarrenMack-OD/gulp-sonar2/",
   "author": {
     "name": "Darren Mackintosh",
